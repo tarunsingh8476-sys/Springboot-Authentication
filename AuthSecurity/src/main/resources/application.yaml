@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: AuthSecurity
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/UserAuth
+    username: postgres
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-expiration: 900000
+  refresh-expiration: 9000000
